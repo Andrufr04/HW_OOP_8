@@ -26,9 +26,13 @@ public:
 	void PushArr1(int newArr[], int newSize); // 1v
 	void PushArr2(Vector* arr2);
 
+	Vector operator-(int a);
+	Vector operator+(int a);
+	Vector operator+(const Vector& obj2);
+	Vector operator* (int a);
 };
 
-/*
+/* - ЕСТЬ
 Добавляем следующие методы:
 Добаление 1 значения на начало массива
 Добавление по индексу, индекс и значение передаем как параметр

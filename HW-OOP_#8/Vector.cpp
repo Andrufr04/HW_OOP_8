@@ -204,3 +204,55 @@ void Vector::PushArr2(Vector* arr2)
 
 	size += arr2->GetSize();
 }
+
+Vector Vector::operator-(int a)
+{
+	Vector rez(size - a);
+	for (int i = 0; i < rez.size; i++)
+	{
+		rez.arr[i] = this->arr[i];
+	}
+	return rez;
+}
+Vector Vector::operator+(int a)
+{
+	Vector rez(size + a);
+	for (int i = 0; i < rez.size; i++)
+	{
+		if (i >= this->size)
+		{
+			rez.arr[i] = 0;
+		}
+		else
+		{
+			rez.arr[i] = this->arr[i];
+		}
+	}
+	return rez;
+}
+Vector Vector::operator+(const Vector& obj2)
+{
+	Vector rez(size + obj2.size);
+
+	for (int i = 0; i < size; i++)
+	{
+		rez.arr[i] = arr[i];
+	}
+
+	for (int i = 0; i < obj2.size; i++)
+	{
+		rez.arr[size + i] = obj2.arr[i];
+	}
+
+	return rez;
+}
+Vector Vector::operator*(int a)
+{
+	Vector rez(size);
+	for (int i = 0; i < size; i++)
+	{
+		rez.arr[i] = this->arr[i] * a;
+	}
+	return rez;
+}
+
