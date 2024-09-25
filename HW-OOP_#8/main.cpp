@@ -11,18 +11,13 @@ int main()
 	obj1.InputRand(); 
 	obj1.Print();
 
-	cout << "Adding 3 elements (+= 3):" << endl;
-	obj1 += 3; // Увеличение вектора на 3 элемента (новые элементы будут инициализированы нулями)
+	obj1 += 3;
 	obj1.Print();
 
-	// Применение оператора -=
-	cout << "Removing 2 elements (-= 2):" << endl;
-	obj1 -= 2; // Уменьшение вектора на 2 элемента
+	obj1 -= 2;
 	obj1.Print();
 
-	// Применение оператора *=
-	cout << "Multiplying all elements by 5 (*= 5):" << endl;
-	obj1 *= 5; // Умножение всех элементов на 5
+	obj1 *= 5;
 	obj1.Print();
 
 	return 0;
