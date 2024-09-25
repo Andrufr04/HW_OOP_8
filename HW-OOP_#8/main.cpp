@@ -6,24 +6,59 @@ int main()
 {
 	srand(time(0));
 
-	cout << "Add 0 el: " << endl;
+
 	Vector obj1(5);
+	obj1.InputRand(); 
+	obj1.Print();
+
+	cout << "Adding 3 elements (+= 3):" << endl;
+	obj1 += 3; // Увеличение вектора на 3 элемента (новые элементы будут инициализированы нулями)
+	obj1.Print();
+
+	// Применение оператора -=
+	cout << "Removing 2 elements (-= 2):" << endl;
+	obj1 -= 2; // Уменьшение вектора на 2 элемента
+	obj1.Print();
+
+	// Применение оператора *=
+	cout << "Multiplying all elements by 5 (*= 5):" << endl;
+	obj1 *= 5; // Умножение всех элементов на 5
+	obj1.Print();
+
+	return 0;
+
+	/*Vector obj1(5);
 	obj1.InputRand();
 	obj1.Print();
 
-	Vector obj2 = obj1 + 5; // 1 2 3 4 5 0 0 0 0 
-	obj2.Print();
-
-	cout << "Add arr: " << endl;
-    Vector obj4(2);// 10 20
-	obj4.InputRand();
+	Vector obj4 = ++obj1;
+	obj1.Print();
 	obj4.Print();
-    Vector obj5 = obj1 + obj4; // 1 2 3 4 5 10 20 
-	obj5.Print();
 
-	cout << "Mul: " << endl;
-	Vector obj6 = obj1 * 3;
-	obj6.Print();
+	Vector obj5 = obj1++;
+	obj1.Print();
+	obj5.Print();*/
+
+
+
+	//cout << "Add 0 el: " << endl;
+	//Vector obj1(5);
+	//obj1.InputRand();
+	//obj1.Print();
+
+	//Vector obj2 = obj1 + 5; // 1 2 3 4 5 0 0 0 0 
+	//obj2.Print();
+
+	//cout << "Add arr: " << endl;
+ //   Vector obj4(2);// 10 20
+	//obj4.InputRand();
+	//obj4.Print();
+ //   Vector obj5 = obj1 + obj4; // 1 2 3 4 5 10 20 
+	//obj5.Print();
+
+	//cout << "Mul: " << endl;
+	//Vector obj6 = obj1 * 3;
+	//obj6.Print();
 
 
 	/*Vector obj1(5);

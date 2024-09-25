@@ -23,6 +23,29 @@ Vector::~Vector()
 	
 }
 
+Vector::Vector(const Vector& other) 
+{
+	size = other.size;
+	arr = new int[size];
+	for (int i = 0; i < size; i++) 
+	{
+		arr[i] = other.arr[i];
+	}
+}
+Vector& Vector::operator=(const Vector& other)
+{
+	if (this != &other)
+	{
+		delete[] arr;
+		size = other.size;
+		arr = new int[size];
+		for (int i = 0; i < size; i++) {
+			arr[i] = other.arr[i];
+		}
+	}
+	return *this;
+}
+
 void Vector::InputRand()
 {
 	for (int i = 0; i < size; i++)
@@ -256,3 +279,74 @@ Vector Vector::operator*(int a)
 	return rez;
 }
 
+Vector& Vector::operator++() 
+{
+	PushBeg(0);
+	return *this;
+}
+Vector Vector::operator++(int) 
+{
+	Vector temp = *this;
+	PushBeg(0);
+	return temp;
+}
+Vector& Vector::operator--() 
+{
+	PopIndex(0);
+	return *this;
+}
+Vector Vector::operator--(int) 
+{
+	Vector temp = *this;
+	PopIndex(0);
+	return temp;
+}
+
+Vector& Vector::operator+=(int a) 
+{
+	int* temp = new int[size + a];
+
+	for (int i = 0; i < size; i++) 
+	{
+		temp[i] = arr[i];
+	}
+
+	for (int i = size; i < size + a; i++) 
+	{
+		temp[i] = 0;
+	}
+
+	delete[] arr;
+
+	arr = temp;
+	size += a;
+
+	return *this;
+}
+Vector& Vector::operator-=(int a) 
+{
+	if (size >= a) 
+	{
+		int* temp = new int[size - a];
+		for (int i = 0; i < size - a; i++) 
+		{
+			temp[i] = arr[i];
+		}
+
+		delete[] arr;
+
+		arr = temp;
+		size -= a;
+	}
+
+	return *this;
+}
+Vector& Vector::operator*=(int a) 
+{
+	for (int i = 0; i < size; i++) 
+	{
+		arr[i] *= a;
+	}
+
+	return *this;
+}
