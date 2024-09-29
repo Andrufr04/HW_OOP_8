@@ -71,6 +71,15 @@ int Vector::GetSize()
 	return size;
 }
 
+void Vector::SetArr(int* newArr) 
+{
+	arr = newArr;
+}
+void Vector::SetSize(int newSize) 
+{
+	size = newSize;
+}
+
 
 void Vector::PushBack(int a)
 {
@@ -149,6 +158,7 @@ int Vector::PopIndex(int index)
 	if (index > size - 1 || index < 0)
 	{
 		cout << "Error" << endl;
+		return -1; 
 	}
 	else
 	{
@@ -158,8 +168,8 @@ int Vector::PopIndex(int index)
 		{
 			temp[i] = arr[i];
 		}
-		int el = temp[index];
-		for (int i = index+1; i < size; i++)
+		int el = arr[index]; 
+		for (int i = index + 1; i < size; i++)
 		{
 			temp[i - 1] = arr[i];
 		}
@@ -302,7 +312,7 @@ Vector Vector::operator--(int)
 	return temp;
 }
 
-Vector& Vector::operator+=(int a) 
+/*Vector& Vector::operator+=(int a) 
 {
 	int* temp = new int[size + a];
 
@@ -349,4 +359,4 @@ Vector& Vector::operator*=(int a)
 	}
 
 	return *this;
-}
+}*/

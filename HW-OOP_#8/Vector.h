@@ -13,8 +13,11 @@ public:
 	Vector(int s);
 	void InputRand(); // инициализация случ числами
 	void Print();// вывод на консоль
+
 	int* GetArr();
 	int GetSize();
+	void SetArr(int* newArr);
+	void SetSize(int newSize);
 
 	void PushBack(int a);
 	int PopBack();
@@ -38,9 +41,9 @@ public:
 	Vector& operator--();
 	Vector operator--(int);
 
-	Vector& operator+=(int a);
-	Vector& operator-=(int a);
-	Vector& operator*=(int a);
+	//Vector& operator+=(int a);
+	//Vector& operator-=(int a);
+	//Vector& operator*=(int a);
 };
 
 /*
