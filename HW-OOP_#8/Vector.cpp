@@ -23,6 +23,17 @@ Vector::~Vector()
 	
 }
 
+Vector::Vector(initializer_list<int> a) 
+{
+	size = a.size();
+	arr = new int[size];
+	int i = 0;
+	for (auto x = a.begin(); x != a.end(); ++x) 
+	{
+		arr[i++] = *x;
+	}
+}
+
 Vector::Vector(const Vector& other) 
 {
 	size = other.size;

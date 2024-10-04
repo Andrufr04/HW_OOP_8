@@ -115,9 +115,13 @@ int main()
 {
 	srand(time(0));
 
-	Vector c(3);
+	Vector a = { 1,2,3,4,13,6,7 };
+	cout << a;
+
+
+	/*Vector c(3);
 	cin >> c;
-	cout << c;
+	cout << c;*/
 
 
 	//Vector obj(10);
